@@ -28,7 +28,7 @@ INSERT INTO Direction (ID_direction, direction_name) VALUES (1, 'Direction Kerse
 INSERT INTO Arrets_horaires (ID_Arret, ID_Horaire) VALUES (3,11), (3,12), (3,13), (3,14), (3,15), (4,2), (4,3), (4,9), (4,10), (4,16);
 
 /* Store and associate bus stop and bus direction in a certain order */
-INSERT INTO Arrets_Direction (ID_Arret, ID_direction, order_in_direction) VALUES (1,1,1), (2,1,2), (3,1,3), (4,1,4), (5,1,5), (6,1,6), (7,1,7), (8,1,8);
+INSERT INTO Arrets_Direction (ID_Arret, ID_direction, order_in_direction) VALUES (1,1,1), (2,1,2), (3,1,3), (4,1,4), (5,1,5), (6,1,6), (7,1,7), (8,1,8), (8,2,1), (7,2,2), (6,2,3), (5,2,4), (4,2,5), (3,2,6), (2,2,7), (1,2,8);
 
 /* Used to indicate that a bus stop is unavailable and associate a redirection bus stop with it. */
 INSERT INTO Redirections_Temporaires (ID_Arret_Non_Desservi, ID_Arret_Redirection) VALUES (6, 7);
