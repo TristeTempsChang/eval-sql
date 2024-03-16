@@ -72,6 +72,11 @@ CREATE TABLE Redirections_Temporaires (
     PRIMARY KEY (ID_Redirection)
 );
 
+/* For exercice 10 : Create a table for the stored procedure */
+CREATE TABLE schedule (
+    horaires TIME
+);
+
 /* Add all foreign key to all concerned tables */
 ALTER TABLE Ligne_Arret ADD CONSTRAINT FK_Ligne_Arret_ID_Ligne FOREIGN KEY (ID_Ligne) REFERENCES Ligne (ID_Ligne);
 ALTER TABLE Ligne_Arret ADD CONSTRAINT FK_Ligne_Arret_ID_Arret FOREIGN KEY (ID_Arret) REFERENCES Arrets (ID_Arret);
@@ -83,3 +88,26 @@ ALTER TABLE Arrets_horaires ADD CONSTRAINT FK_Arrets_horaires_ID_Arret FOREIGN K
 ALTER TABLE Arrets_horaires ADD CONSTRAINT FK_Arrets_horaires_ID_Horaire FOREIGN KEY (ID_Horaire) REFERENCES Horaires (ID_Horaire);
 ALTER TABLE Redirections_Temporaires ADD CONSTRAINT FK_Redirections_Temporaires_ID_Arret_Non_Desservi FOREIGN KEY (ID_Arret_Non_Desservi) REFERENCES Arrets (ID_Arret);
 ALTER TABLE Redirections_Temporaires ADD CONSTRAINT FK_Redirections_Temporaires_ID_Arret_Redirection FOREIGN KEY (ID_Arret_Redirection) REFERENCES Arrets (ID_Arret);
+
+
+/* For exercice 10 : Stored procedure for insert schedules, minute by minute, in a schedule table */
+DELIMITER //
+
+CREATE PROCEDURE insert_schedule(
+    IN time_start TIME,
+    IN time_end TIME,
+    IN step_time TIME
+)
+BEGIN
+    DECLARE current_time_value TIME;
+    
+    SET current_time_value = time_start;
+    
+    WHILE current_time_value <= time_end DO
+        INSERT INTO schedule (horaires) VALUES (current_time_value);
+        SET current_time_value = ADDTIME(current_time_value, step_time);
+    END WHILE;
+    
+END//
+
+DELIMITER ;

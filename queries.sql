@@ -59,3 +59,10 @@ LEFT JOIN
     Arrets ON Arrets_Direction.ID_Arret = Arrets.ID_Arret
 GROUP BY 
     Direction.ID_direction, Direction.direction_name;
+
+
+
+
+/* Call of the stored procedure */
+CALL insert_schedule('06:32', '06:41', '00:01');
+SELECT horaires FROM schedule;
