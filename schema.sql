@@ -1,3 +1,9 @@
+/* Create the database */
+CREATE DATABASE IF NOT EXISTS evalsql;
+
+/* Use the newly created database */
+USE evalsql;
+
 /* Table Arrets */
 DROP TABLE IF EXISTS Arrets;
 CREATE TABLE Arrets (
