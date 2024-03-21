@@ -1,3 +1,5 @@
+DROP DATABASE evalsql;
+
 /* Create the database */
 CREATE DATABASE IF NOT EXISTS evalsql;
 
