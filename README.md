@@ -31,23 +31,13 @@ code .
 sudo mysql -u "nom de votre utilisateur" -p
 ```
 
-## 4. Créez la database et allez dessus : 
-
-```bash
-CREATE DATABASE evalsql;
-```
-
-```bash
-use evalsql;
-```
-
-## 5. Retournez sur visual studio, faite un clic droit sur le fichier schema.sql, sélectionnez "Copy path" puis retournez sur le terminal et effectuez cette commande : 
+## 4. Retournez sur visual studio, faite un clic droit sur le fichier schema.sql, sélectionnez "Copy path" puis retournez sur le terminal mysql et effectuez cette commande : 
 
 ```bash
 source "Collez le path que vous avez copié dans VsCode"
 ```
 
-## 6. Effectuez la même étape mais pour le fichier data.sql 
+## 5. Effectuez la même étape mais pour le fichier data.sql 
 
 ```bash
 source "Collez le path que vous avez copié dans VsCode"
